@@ -1,0 +1,23 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model List<IdentityRole>
+
+<a href="/admin/role/create" class="btn btn-dark">Create</a>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td></td>
+            </tr>
+        }
+    </tbody>
+</table>

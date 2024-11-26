@@ -1,0 +1,25 @@
+﻿@model AppUser
+@inject Microsoft.AspNetCore.Identity.UserManager<AppUser> userManager;
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            var roles = await userManager.GetRolesAsync(Model);
+        }
+        @foreach (var item in roles)
+        {
+            <tr>
+                <td>@item</td>
+                <td>
+                    <a class="btn btn-danger" asp-area="Admin" asp-controller="User" asp-action="Delete" asp-route-userId="@Model.Id" asp-route-role="@item">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

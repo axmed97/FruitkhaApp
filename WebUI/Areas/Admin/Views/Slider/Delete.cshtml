@@ -1,0 +1,9 @@
+﻿@model Slider
+
+
+<form method="post">
+    <input type="hidden" asp-for="PhotoPath" />
+    <p>Are you sure to delete this slider: @Model.Title</p>
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-area="Admin" asp-controller="Slider" asp-action="Index" class="btn btn-dark">Cancel</a>
+</form>
